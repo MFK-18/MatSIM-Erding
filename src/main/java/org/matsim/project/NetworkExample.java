@@ -38,6 +38,7 @@ import org.matsim.core.utils.misc.Time;
 import org.matsim.pt.transitSchedule.api.*;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -130,14 +131,17 @@ import java.util.*;
             }
 
             String line;
-            while((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 String[] values = line.split(";");
                 final int nodeId = Integer.parseInt(values[NODE_ID_COLUMN]);
-                final double xCoordinate = Double.parseDouble(values[NODE_XCOORD_COLUMN].replace(",","."));
-                final double yCoordinate = Double.parseDouble(values[NODE_YCOORD_COLUMN].replace(",","."));
+                final double xCoordinate = Double.parseDouble(values[NODE_XCOORD_COLUMN].replace(",", "."));
+                final double yCoordinate = Double.parseDouble(values[NODE_YCOORD_COLUMN].replace(",", "."));
                 final Node node = this.network.getFactory().createNode(Id.create(nodeId, Node.class), new Coord(xCoordinate, yCoordinate));
-                nodes.put(nodeId,node);
+                nodes.put(nodeId, node);
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(-1);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(-1);
