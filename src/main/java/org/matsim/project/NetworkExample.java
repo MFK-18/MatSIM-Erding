@@ -5,7 +5,7 @@ import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.network.Network;
 import org.matsim.api.core.v01.network.Node;
-import org.matsim.pt.transitSchedule.api.*;
+import org.matsim.pt.transitSchedule.api.TransitStopFacility;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -36,6 +36,7 @@ import java.util.*;
     public NetworkExample(Network network) {
         this.network = network;
     }
+
 
     protected void init() {
         buildNetwork();
@@ -74,24 +75,27 @@ import java.util.*;
 
 
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\LinTimCSV\\Linkssheet.CSV"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\LinTimCSV\\Link.CSV"))) {
             for (int i = 0; i < 5; i++) {
                 reader.readLine();
             }
             String line;
+            int linkId = 0;
             while((line = reader.readLine()) != null) {
                 String[] values = line.split(";");
-                final int linkId = Integer.parseInt(values[LINK_ID_COLUMN]);
+//                final int linkId = Integer.parseInt(values[LINK_ID_COLUMN]);
+
                 final int fromId = Integer.parseInt(values[FROM_NODE_ID_COLUMN]);
                 final int toId = Integer.parseInt(values[TO_NODE_ID_COLUMN]);
-                final double length = Double.parseDouble(values[LINK_LENGTH_COLUMN]);//.replace(",","."));
+                final double length = Double.parseDouble(values[LINK_LENGTH_COLUMN].replace(",","."));//.replace(",","."));
                 final Link link = this.network.getFactory().createLink(Id.create( linkId, Link.class), nodes.get(fromId), nodes.get(toId));
                 links.put(linkId,link);
                 links.get(linkId).setLength(length);
 //              links.get(linkId).setFreespeed(44.44);
 //              links.get(linkId).setCapacity(2000.0);
 //              links.get(linkId).setNumberOfLanes(1.0);
-
+                links.get(linkId).setAllowedModes(Collections.singleton(("car, pt")));
+                linkId++;
             }
         } catch (IOException e) {
             e.printStackTrace();
