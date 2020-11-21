@@ -94,7 +94,7 @@ import java.util.*;
 //              links.get(linkId).setFreespeed(44.44);
 //              links.get(linkId).setCapacity(2000.0);
 //              links.get(linkId).setNumberOfLanes(1.0);
-                links.get(linkId).setAllowedModes(Collections.singleton(("car, pt")));
+//                links.get(linkId).setAllowedModes(Collections.singleton(("car")));
                 linkId++;
             }
         } catch (IOException e) {

@@ -47,9 +47,15 @@ public class RunMatsim{
 //		Config config = ConfigUtils.loadConfig( args[0], new PConfigGroup() ) ;
 //		pConfig.getCostPerKilometer();
 
-		//TODO config file überarbeiten
+
 		Config config = ConfigUtils.loadConfig("./scenarios/Erding/Input/config.xml", new PConfigGroup());
+//		Config config = ConfigUtils.loadConfig("./scenarios/Erding/Input/minibusconfig.xml", new PConfigGroup());
+//		Config config = ConfigUtils.loadConfig("./scenarios/Erding/Input/minibusconfigoriginal.xml", new PConfigGroup());
+
+//		Config config = ConfigUtils.loadConfig("https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/atlantis/minibus/config.xml", new PConfigGroup());
 //		ConfigUtils.addOrGetModule(config, PConfigGroup.GROUP_NAME, PConfigGroup.class);
+//		config.network().setInputFile(null);
+//		config.plans().setInputFile(null);
 
 //		Config config = ConfigUtils.createConfig();
 		Scenario scenario = ScenarioUtils.loadScenario(config);
@@ -63,7 +69,7 @@ public class RunMatsim{
 		createPopulation.populate();
 
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/v1");
+		config.controler().setOutputDirectory("./Erding/output/21-11-2020-5iter");
 		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 

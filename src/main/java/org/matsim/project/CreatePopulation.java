@@ -97,8 +97,8 @@ public class CreatePopulation {
             }
         }
 
-        MatsimWriter popWriter = new PopulationWriter(population);
-        popWriter.write("./scenarios/Erding/Input/population-17-11-2020.xml");
+//        MatsimWriter popWriter = new PopulationWriter(population);
+//        popWriter.write("./scenarios/Erding/Input/population-17-11-2020.xml");
 
         /*
          * Create a Person designated "1" and add it to the Population.
