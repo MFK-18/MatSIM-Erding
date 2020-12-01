@@ -69,7 +69,7 @@ public class RunMatsim{
 		createPopulation.populate();
 
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/21-11-2020-5iter");
+		config.controler().setOutputDirectory("./Erding/output/24-11-2020-first400iterRun(stillwrongSpeed)(1)");
 		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 
