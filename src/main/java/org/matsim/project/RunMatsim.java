@@ -19,20 +19,15 @@
 package org.matsim.project;
 
 
-import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptor;
 import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptorModule;
 import org.matsim.api.core.v01.Scenario;
-import org.matsim.api.core.v01.network.Network;
-import org.matsim.api.core.v01.population.*;
 import org.matsim.contrib.minibus.PConfigGroup;
 import org.matsim.contrib.minibus.hook.PModule;
 import org.matsim.core.config.Config;
-import org.matsim.core.config.ConfigGroup;
 import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
-import org.matsim.run.NetworkCleaner;
 
 /**
  * @author nagel
@@ -60,17 +55,17 @@ public class RunMatsim{
 //		Config config = ConfigUtils.createConfig();
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 
-		Network network = scenario.getNetwork();
-		NetworkExample networkExample = new NetworkExample(network);
-		networkExample.init();
+//		Network network = scenario.getNetwork();
+//		NetworkExample networkExample = new NetworkExample(network);
+//		networkExample.init();
 
-		Population population = scenario.getPopulation();
-		CreatePopulation createPopulation = new CreatePopulation(population, network);
-		createPopulation.populate();
+//		Population population = scenario.getPopulation();
+//		CreatePopulation createPopulation = new CreatePopulation(population, network);
+//		createPopulation.populate();
 
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/24-11-2020-first400iterRun(stillwrongSpeed)(1)");
-		config.plans().isRemovingUnneccessaryPlanAttributes();
+		config.controler().setOutputDirectory("./Erding/output/22-12-2020-100iter(2)");
+//		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 
 		// possibly modify scenario here

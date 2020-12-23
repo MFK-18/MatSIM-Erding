@@ -4,10 +4,10 @@
     <module name="p">
         <param name="pIdentifier" value="para_"/>
         <param name="operatorType" value="CarefulMultiPlanOperator"/>
-        <param name="numberOfOperators" value="5"/>
+        <param name="numberOfOperators" value="10"/>
         <param name="numberOfIterationsForProspecting" value="10"/>
         <param name="initialBudget" value="2001.0"/>
-        <param name="paxPerVehicle" value="10"/>
+        <param name="paxPerVehicle" value="70"/>
         <param name="passengerCarEquivalents" value="1.0"/>
         <param name="vehicleMaximumVelocity" value="6.0"/>
         <!-- überlegen wieviel geschw. macht Sinn, zu hoher Wert evtl besser-->
@@ -19,31 +19,34 @@
         <param name="costPerVehicleAndDay" value="1200.00"/>
         <param name="costPerKilometer" value="1.50"/>
         <param name="costPerHour" value="50.00"/>
+
+<!--        <param name="costPerVehicleAndDay" value="100.00"/>-->
+<!--        <param name="costPerKilometer" value="0.30"/>-->
+<!--        <param name="costPerHour" value="10.00"/>-->
 <!--        Werte von earnings anpassen an kosten-->
-        <param name="earningsPerBoardingPassenger" value="10.0"/>
-<!--        umsteigezeiten mit einbezogen?-->
-        <param name="earningsPerKilometerAndPassenger" value="1.0"/>
+        <param name="earningsPerBoardingPassenger" value="15.0"/>
+        <param name="earningsPerKilometerAndPassenger" value="2.0"/>
         <param name="pricePerVehicleBought" value="500.0"/>
         <param name="pricePerVehicleSold" value="500.0"/>
         <param name="startWith24Hours" value="false"/>
         <param name="minOperationTime" value="0.0"/>
         <!--        Koord vom Netzwerk an min/max anpassen in Via grob wahrnehmen!!-->
-        <param name="minX" value="4467850.0"/>
-        <param name="maxX" value="4525380.0"/>
-        <param name="minY" value="5331590.0"/>
-        <param name="maxY" value="5369770.0"/>
+        <param name="minX" value="4467800.0"/>
+        <param name="maxX" value="4525400.0"/>
+        <param name="minY" value="5331550.0"/>
+        <param name="maxY" value="5369800.0"/>
         <param name="useFranchise" value="true"/>
         <param name="writeStatsInterval" value="1"/>
         <param name="logOperators" value="true"/>
         <param name="writeGexfStatsInterval" value="20"/>
         <param name="routeProvider" value="TimeAwareComplexCircleScheduleProvider"/>
-        <param name="speedLimitForStops" value="10.0"/>
+        <param name="speedLimitForStops" value="2.01"/>
         <param name="planningSpeedFactor" value="1.0"/>
         <param name="gridSize" value="500.0"/>
         <param name="timeSlotSize" value="900.0"/>
         <param name="useAdaptiveNumberOfOperators" value="true"/>
         <param name="shareOfOperatorsWithProfit" value="0.90"/>
-        <param name="disableCreationOfNewOperatorsInIteration" value="250"/>
+        <param name="disableCreationOfNewOperatorsInIteration" value="25"/>
         <param name="reRouteAgentsStuck" value="false"/>
         <!-- <param name="Module_1" value="MaxRandomStartTimeAllocator" />
                 <param name="ModuleProbability_1" value="0.10" />
@@ -82,14 +85,14 @@
     <!--  ======================================================================  -->
     <module name="controler">
         <param name="enableLinkToLinkRouting" value="false"/>
-        <param name="firstIteration" value="0"/>
-        <param name="lastIteration" value="300"/>
         <param name="runId" value="Erding-Matsim" />
+        <param name="firstIteration" value="0"/>
+        <param name="lastIteration" value="50"/>
 <!--        <param name="outputDirectory" value="./scenarios/Erding/output/21-11-2020-5iter/"/>-->
         <param name="eventsFileFormat" value="xml"/>
-        <param name="writeEventsInterval" value="300" />
-        <param name="writePlansInterval" value="300" />
-        <param name="routingAlgorithmType" value="FastAStarLandmarks"/>
+        <param name="writeEventsInterval" value="50" />
+        <param name="writePlansInterval" value="50" />
+        <param name="routingAlgorithmType" value="AStarLandmarks"/>
     </module>
 
 
@@ -101,27 +104,26 @@
 
 
     <module name="global">
-        <param name="randomSeed" value="1234"/>
-        <!--        überprüfen welches in lintim verwendet wird,falls-->
         <param name="coordinateSystem" value="EPSG:31468"/>
+        <param name="randomSeed" value="1234"/>
         <param name="numberOfThreads" value="2"/>
     </module>
-    <!--module name="network">
-        <param name="inputNetworkFile" value="https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/atlantis/minibus/input/network.xml"/>
+    <module name="network">
+        <param name="inputNetworkFile" value="NetworkErding-22-12-2020-Schleifenlinks(final).xml"/>
     </module>
-     -->
+
 
 
     <module name="transitRouter">
         <param name="searchRadius" value="1"/>
-        <param name="extensionRadius" value="1"/>
-        <param name="maxBeelineWalkConnectionDistance" value="10"/>
+        <param name="extensionRadius" value="200"/>
+        <param name="maxBeelineWalkConnectionDistance" value="1"/>
         <param name="additionalTransferTime" value="180"/>
-        <param name="directWalkFactor" value="100.0" />
+<!--        <param name="directWalkFactor" value="100.0" />-->
     </module>
     <!--  ======================================================================  -->
     <module name="planCalcScore">
-        <param name="fractionOfIterationsToStartScoreMSA" value="0.8" />
+<!--        <param name="fractionOfIterationsToStartScoreMSA" value="0.8" />-->
 <!--        <parameterset type="scoringParameters" >-->
 <!--            <parameterset type="modeParams" >-->
 <!--                <param name="constant" value="-0.0" />-->
@@ -175,23 +177,24 @@
 
 
     <!--  ======================================================================  -->
-<!--    <module name="plans">-->
-<!--        <param name="inputPlansFile" value="https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/atlantis/minibus/input/population_1000_per_hour_each_from_6_to_10.xml.gz"/>-->
-<!--    </module>-->
+    <module name="plans">
+        <param name="inputPlansFile" value="population-21-12-2020-6-12am--1-7pm.xml"/>
+    </module>
     <!--  ======================================================================  -->
         <module name="qsim" >
-            <param name="endTime" value="36:00:00" />
-            <param name="flowCapacityFactor" value="1.0" />
-            <param name="numberOfThreads" value="1" />
+            <param name="endTime" value="30:00:00"/>
+            <param name="flowCapacityFactor" value="1.0"/>
+            <param name="numberOfThreads" value="1"/>
             <param name="removeStuckVehicles" value="false"/>
-            <param name="startTime" value="00:00:00" />
-            <param name="storageCapacityFactor" value="0.1" />
-            <param name="stuckTime" value="30.0" />
-            <param name="trafficDynamics" value="kinematicWaves" />
-            <param name="vehiclesSource" value="modeVehicleTypesFromVehiclesData" />
-            <param name="insertingWaitingVehiclesBeforeDrivingVehicles" value="true" />
+            <param name="startTime" value="00:00:00"/>
+<!--            <param name="storageCapacityFactor" value="0.1"/>-->
+            <param name="storageCapacityFactor" value="1.0"/>
+<!--            <param name="stuckTime" value="30.0" />-->
+<!--            <param name="trafficDynamics" value="kinematicWaves" />-->
+            <param name="trafficDynamics" value="queue"/>
+<!--            <param name="vehiclesSource" value="modeVehicleTypesFromVehiclesData" />-->
+<!--            <param name="insertingWaitingVehiclesBeforeDrivingVehicles" value="true" />-->
         </module>
-
 
 
     <!--  ======================================================================  -->
@@ -229,6 +232,9 @@
         <param name="transitModes" value="pt"/>
     </module>
 
+    <module name="changeMode">
+        <param name="modes" value="car,pt"/>
+    </module>
 
 <!--    <module name="planscalcroute" >-->
 <!--        <param name="networkModes" value="car" />-->
