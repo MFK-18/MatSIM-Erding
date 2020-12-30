@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE transitSchedule SYSTEM "http://www.matsim.org/files/dtd/transitSchedule_v2.dtd">
+
+<transitSchedule>
+    <transitStops>
+        <stopFacility id="para_999001" x="4492790.5" y="5350524.5" linkRefId="999001" isBlocking="false"/>
+        <stopFacility id="para_999002" x="4495929.5" y="5350882.5" linkRefId="999002" isBlocking="false"/>
+        <stopFacility id="para_999003" x="4503278.5" y="5350340.5" linkRefId="999003" isBlocking="false"/>
+        <stopFacility id="para_999004" x="4502669.0" y="5355514.0" linkRefId="999004" isBlocking="false"/>
+        <stopFacility id="para_999005" x="4511935.0" y="5347670.0" linkRefId="999005" isBlocking="false"/>
+        <stopFacility id="para_999006" x="4511233.5" y="5348363.0" linkRefId="999006" isBlocking="false"/>
+        <stopFacility id="para_999007" x="4493546.5" y="5349869.5" linkRefId="999007" isBlocking="false"/>
+        <stopFacility id="para_999008" x="4493682.5" y="5351729.0" linkRefId="999008" isBlocking="false"/>
+        <stopFacility id="para_999009" x="4492177.5" y="5353085.5" linkRefId="999009" isBlocking="false"/>
+        <stopFacility id="para_999010" x="4499590.5" y="5359250.5" linkRefId="999010" isBlocking="false"/>
+        <stopFacility id="para_999011" x="4482894.0" y="5357244.5" linkRefId="999011" isBlocking="false"/>
+        <stopFacility id="para_999012" x="4495707.0" y="5344803.5" linkRefId="999012" isBlocking="false"/>
+        <stopFacility id="para_999013" x="4504581.0" y="5341783.5" linkRefId="999013" isBlocking="false"/>
+        <stopFacility id="para_999014" x="4497936.0" y="5365234.5" linkRefId="999014" isBlocking="false"/>
+        <stopFacility id="para_999015" x="4503791.5" y="5346582.5" linkRefId="999015" isBlocking="false"/>
+        <stopFacility id="para_999016" x="4503969.0" y="5346187.0" linkRefId="999016" isBlocking="false"/>
+        <stopFacility id="para_999017" x="4506290.0" y="5350242.0" linkRefId="999017" isBlocking="false"/>
+        <stopFacility id="para_999018" x="4503343.0" y="5345680.0" linkRefId="999018" isBlocking="false"/>
+        <stopFacility id="para_999019" x="4494580.0" y="5354717.5" linkRefId="999019" isBlocking="false"/>
+        <stopFacility id="para_999020" x="4489838.5" y="5339512.0" linkRefId="999020" isBlocking="false"/>
+        <stopFacility id="para_999021" x="4471064.0" y="5332592.0" linkRefId="999021" isBlocking="false"/>
+        <stopFacility id="para_999022" x="4491178.5" y="5342258.5" linkRefId="999022" isBlocking="false"/>
+        <stopFacility id="para_999023" x="4498346.0" y="5357819.5" linkRefId="999023" isBlocking="false"/>
+        <stopFacility id="para_999024" x="4499848.0" y="5360265.0" linkRefId="999024" isBlocking="false"/>
+        <stopFacility id="para_999025" x="4491409.5" y="5345161.5" linkRefId="999025" isBlocking="false"/>
+        <stopFacility id="para_999026" x="4496585.0" y="5356443.0" linkRefId="999026" isBlocking="false"/>
+        <stopFacility id="para_999027" x="4509783.0" y="5356190.0" linkRefId="999027" isBlocking="false"/>
+        <stopFacility id="para_999028" x="4499477.0" y="5362687.5" linkRefId="999028" isBlocking="false"/>
+        <stopFacility id="para_999029" x="4497776.0" y="5346844.0" linkRefId="999029" isBlocking="false"/>
+        <stopFacility id="para_999030" x="4499833.0" y="5361491.0" linkRefId="999030" isBlocking="false"/>
+        <stopFacility id="para_999031" x="4510174.0" y="5342884.0" linkRefId="999031" isBlocking="false"/>
+        <stopFacility id="para_999032" x="4498550.0" y="5353614.5" linkRefId="999032" isBlocking="false"/>
+        <stopFacility id="para_999033" x="4505875.0" y="5356669.0" linkRefId="999033" isBlocking="false"/>
+        <stopFacility id="para_999034" x="4493354.0" y="5352510.5" linkRefId="999034" isBlocking="false"/>
+        <stopFacility id="para_999035" x="4467859.0" y="5331594.0" linkRefId="999035" isBlocking="false"/>
+        <stopFacility id="para_999036" x="4484340.5" y="5357249.0" linkRefId="999036" isBlocking="false"/>
+        <stopFacility id="para_999037" x="4485864.0" y="5343176.0" linkRefId="999037" isBlocking="false"/>
+        <stopFacility id="para_999038" x="4487083.0" y="5345227.5" linkRefId="999038" isBlocking="false"/>
+        <stopFacility id="para_999039" x="4488325.5" y="5355454.0" linkRefId="999039" isBlocking="false"/>
+        <stopFacility id="para_999040" x="4488588.0" y="5348786.0" linkRefId="999040" isBlocking="false"/>
+        <stopFacility id="para_999041" x="4475709.0" y="5343146.5" linkRefId="999041" isBlocking="false"/>
+        <stopFacility id="para_999042" x="4511138.5" y="5348540.5" linkRefId="999042" isBlocking="false"/>
+        <stopFacility id="para_999043" x="4492345.0" y="5348637.0" linkRefId="999043" isBlocking="false"/>
+        <stopFacility id="para_999044" x="4476444.0" y="5334074.0" linkRefId="999044" isBlocking="false"/>
+        <stopFacility id="para_999045" x="4480578.0" y="5335044.0" linkRefId="999045" isBlocking="false"/>
+        <stopFacility id="para_999046" x="4483930.5" y="5336293.0" linkRefId="999046" isBlocking="false"/>
+        <stopFacility id="para_999047" x="4525377.0" y="5346609.0" linkRefId="999047" isBlocking="false"/>
+        <stopFacility id="para_999048" x="4482161.5" y="5335615.5" linkRefId="999048" isBlocking="false"/>
+        <stopFacility id="para_999049" x="4496678.5" y="5369763.0" linkRefId="999049" isBlocking="false"/>
+        <stopFacility id="para_999050" x="4511061.5" y="5344324.0" linkRefId="999050" isBlocking="false"/>
+        <stopFacility id="para_999051" x="4485942.0" y="5337060.0" linkRefId="999051" isBlocking="false"/>
+        <stopFacility id="para_999052" x="4481427.0" y="5362646.0" linkRefId="999052" isBlocking="false"/>
+    </transitStops>
+</transitSchedule>

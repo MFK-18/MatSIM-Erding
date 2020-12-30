@@ -24,8 +24,8 @@
 <!--        <param name="costPerKilometer" value="0.30"/>-->
 <!--        <param name="costPerHour" value="10.00"/>-->
 <!--        Werte von earnings anpassen an kosten-->
-        <param name="earningsPerBoardingPassenger" value="15.0"/>
-        <param name="earningsPerKilometerAndPassenger" value="2.0"/>
+        <param name="earningsPerBoardingPassenger" value="4.0"/>
+        <param name="earningsPerKilometerAndPassenger" value="0.0"/>
         <param name="pricePerVehicleBought" value="500.0"/>
         <param name="pricePerVehicleSold" value="500.0"/>
         <param name="startWith24Hours" value="false"/>
@@ -40,7 +40,7 @@
         <param name="logOperators" value="true"/>
         <param name="writeGexfStatsInterval" value="20"/>
         <param name="routeProvider" value="TimeAwareComplexCircleScheduleProvider"/>
-        <param name="speedLimitForStops" value="2.01"/>
+        <param name="speedLimitForStops" value="1.01"/>
         <param name="planningSpeedFactor" value="1.0"/>
         <param name="gridSize" value="500.0"/>
         <param name="timeSlotSize" value="900.0"/>
@@ -87,11 +87,11 @@
         <param name="enableLinkToLinkRouting" value="false"/>
         <param name="runId" value="Erding-Matsim" />
         <param name="firstIteration" value="0"/>
-        <param name="lastIteration" value="50"/>
+        <param name="lastIteration" value="300"/>
 <!--        <param name="outputDirectory" value="./scenarios/Erding/output/21-11-2020-5iter/"/>-->
         <param name="eventsFileFormat" value="xml"/>
-        <param name="writeEventsInterval" value="50" />
-        <param name="writePlansInterval" value="50" />
+        <param name="writeEventsInterval" value="300" />
+        <param name="writePlansInterval" value="300" />
         <param name="routingAlgorithmType" value="AStarLandmarks"/>
     </module>
 
@@ -224,11 +224,13 @@
 <!--        </parameterset>-->
     </module>
     <module name="vehicles" >
-        <param name="vehiclesFile" value="C:\Users\Mike\git\matsim-example-project\scenarios\Erding\Input\transitvehicles.xml"/>
+        <param name="vehiclesFile" value="transitvehicles.xml"/>
         <!--        <param name="vehiclesFile" value="https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5-mode-vehicle-types.xml" />-->
     </module>
     <module name="transit">
         <param name="useTransit" value="true"/>
+        <param name="transitScheduleFile" value="transitStops.xml"/>
+<!--        <param name="transitScheduleFile" value="transitScheduleBahn.xml"/>-->
         <param name="transitModes" value="pt"/>
     </module>
 

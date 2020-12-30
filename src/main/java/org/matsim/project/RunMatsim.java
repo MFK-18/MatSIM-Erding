@@ -64,7 +64,7 @@ public class RunMatsim{
 //		createPopulation.populate();
 
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/22-12-2020-100iter(2)");
+		config.controler().setOutputDirectory("./Erding/output/30-12-2020-300iter(4earnings)");
 //		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 
