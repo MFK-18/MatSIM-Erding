@@ -4,27 +4,32 @@
     <module name="p">
         <param name="pIdentifier" value="para_"/>
         <param name="operatorType" value="CarefulMultiPlanOperator"/>
-        <param name="numberOfOperators" value="10"/>
+        <param name="numberOfOperators" value="5"/>
         <param name="numberOfIterationsForProspecting" value="10"/>
         <param name="initialBudget" value="2001.0"/>
-        <param name="paxPerVehicle" value="70"/>
+<!--        <param name="paxPerVehicle" value="70"/>-->
+        <param name="paxPerVehicle" value="7"/>
         <param name="passengerCarEquivalents" value="1.0"/>
-        <param name="vehicleMaximumVelocity" value="6.0"/>
+        <param name="vehicleMaximumVelocity" value="150.0"/>
         <!-- überlegen wieviel geschw. macht Sinn, zu hoher Wert evtl besser-->
         <param name="delayPerBoardingPassenger" value="2.0"/>
         <!-- Überprüfen wie die Werte in LinTim angegeben, und wie sie Sinn machen in Matsim-->
         <param name="delayPerAlightingPassenger" value="1.0"/>
         <param name="doorOperationMode" value="parallel"/>
 <!--        fix-->
-        <param name="costPerVehicleAndDay" value="1200.00"/>
-        <param name="costPerKilometer" value="1.50"/>
-        <param name="costPerHour" value="50.00"/>
+<!--        <param name="costPerVehicleAndDay" value="1200.00"/>-->
+<!--        <param name="costPerKilometer" value="1.50"/>-->
+<!--        <param name="costPerHour" value="50.00"/>-->
+        <param name="costPerVehicleAndDay" value="120.00"/>
+        <param name="costPerKilometer" value="0.150"/>
+        <param name="costPerHour" value="5.00"/>
 
 <!--        <param name="costPerVehicleAndDay" value="100.00"/>-->
 <!--        <param name="costPerKilometer" value="0.30"/>-->
 <!--        <param name="costPerHour" value="10.00"/>-->
-<!--        Werte von earnings anpassen an kosten-->
-        <param name="earningsPerBoardingPassenger" value="4.0"/>
+<!--        Werte von earnings anpassen an kosten
+cas -->
+        <param name="earningsPerBoardingPassenger" value="5.0"/>
         <param name="earningsPerKilometerAndPassenger" value="0.0"/>
         <param name="pricePerVehicleBought" value="500.0"/>
         <param name="pricePerVehicleSold" value="500.0"/>
@@ -46,7 +51,7 @@
         <param name="timeSlotSize" value="900.0"/>
         <param name="useAdaptiveNumberOfOperators" value="true"/>
         <param name="shareOfOperatorsWithProfit" value="0.90"/>
-        <param name="disableCreationOfNewOperatorsInIteration" value="25"/>
+        <param name="disableCreationOfNewOperatorsInIteration" value="75"/>
         <param name="reRouteAgentsStuck" value="false"/>
         <!-- <param name="Module_1" value="MaxRandomStartTimeAllocator" />
                 <param name="ModuleProbability_1" value="0.10" />
@@ -87,11 +92,11 @@
         <param name="enableLinkToLinkRouting" value="false"/>
         <param name="runId" value="Erding-Matsim" />
         <param name="firstIteration" value="0"/>
-        <param name="lastIteration" value="300"/>
+        <param name="lastIteration" value="250"/>
 <!--        <param name="outputDirectory" value="./scenarios/Erding/output/21-11-2020-5iter/"/>-->
         <param name="eventsFileFormat" value="xml"/>
-        <param name="writeEventsInterval" value="300" />
-        <param name="writePlansInterval" value="300" />
+        <param name="writeEventsInterval" value="250" />
+        <param name="writePlansInterval" value="250" />
         <param name="routingAlgorithmType" value="AStarLandmarks"/>
     </module>
 
@@ -109,7 +114,8 @@
         <param name="numberOfThreads" value="2"/>
     </module>
     <module name="network">
-        <param name="inputNetworkFile" value="NetworkErding-22-12-2020-Schleifenlinks(final).xml"/>
+        <param name="inputNetworkFile" value="NetworkErding-25-01-2021(Orchi).xml"/>
+<!--        <param name="inputNetworkFile" value="NetworkErding-04-12-2020.xml"/>-->
     </module>
 
 
@@ -153,6 +159,7 @@
         <param name="travelingPt" value="-1.0"/>
         <!--  [utils/hr] utility offset of traveling by foot.  normally negative.  this comes on top of the opportunity cost of time.  also see marginalUtlOfDistanceWalk  -->
         <param name="travelingWalk" value="-1.25"/>
+<!--        <param name="travelingWalk" value="-15.00"/>-->
         <param name="utilityOfLineSwitch" value="-0.3"/>
         <param name="activityType_0" value="home"/>
         <param name="activityPriority_0" value="1"/>
@@ -178,7 +185,9 @@
 
     <!--  ======================================================================  -->
     <module name="plans">
-        <param name="inputPlansFile" value="population-21-12-2020-6-12am--1-7pm.xml"/>
+<!--        <param name="inputPlansFile" value="population-21-12-2020-6-12am&#45;&#45;1-7pm.xml"/>-->
+<!--        <param name="inputPlansFile" value="population.xml"/>-->
+        <param name="inputPlansFile" value="population-19-01-2021-6-10am.xml"/>
     </module>
     <!--  ======================================================================  -->
         <module name="qsim" >
@@ -223,14 +232,15 @@
 <!--            <param name="weight" value="0.1" />-->
 <!--        </parameterset>-->
     </module>
-    <module name="vehicles" >
-        <param name="vehiclesFile" value="transitvehicles.xml"/>
-        <!--        <param name="vehiclesFile" value="https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5-mode-vehicle-types.xml" />-->
-    </module>
+<!--    <module name="vehicles" >-->
+<!--        <param name="vehiclesFile" value="transitvehicles.xml"/>-->
+<!--        &lt;!&ndash;        <param name="vehiclesFile" value="https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/berlin-v5.5-10pct/input/berlin-v5-mode-vehicle-types.xml" />&ndash;&gt;-->
+<!--    </module>-->
     <module name="transit">
         <param name="useTransit" value="true"/>
-        <param name="transitScheduleFile" value="transitStops.xml"/>
-<!--        <param name="transitScheduleFile" value="transitScheduleBahn.xml"/>-->
+        <param name="vehiclesFile" value="transitvehicles.xml"/>
+<!--        <param name="transitScheduleFile" value="transitStops(alt).xml"/>-->
+        <param name="transitScheduleFile" value="transitScheduleBahn.xml"/>
         <param name="transitModes" value="pt"/>
     </module>
 

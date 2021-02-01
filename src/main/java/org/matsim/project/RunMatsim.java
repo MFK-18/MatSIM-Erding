@@ -29,6 +29,9 @@ import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author nagel
  *
@@ -62,9 +65,11 @@ public class RunMatsim{
 //		Population population = scenario.getPopulation();
 //		CreatePopulation createPopulation = new CreatePopulation(population, network);
 //		createPopulation.populate();
-
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter df;
+		df = DateTimeFormatter.ISO_LOCAL_DATE;
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/30-12-2020-300iter(4earnings)");
+		config.controler().setOutputDirectory("./Erding/output/" + now.format(df) + "-250iter(10perc)");
 //		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 

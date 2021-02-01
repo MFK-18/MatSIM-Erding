@@ -3,15 +3,20 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.matsim.org/files/dtd http://www.matsim.org/files/dtd/vehicleDefinitions_v1.0.xsd">
     <vehicleType id="car">
-        <length meter="15"/>
-        <width meter="2.55"/>
+        <description>Small Train</description>
+        <capacity>
+            <seats persons="100"/>
+            <standingRoom persons="50"/>
+        </capacity>
+        <length meter="50"/>
+<!--        <width meter="2.55"/>-->
         <accessTime secondsPerPerson="1.0"/>
         <egressTime secondsPerPerson="1.0"/>
         <doorOperation mode="serial"/>
         <passengerCarEquivalents pce="1.0"/>
     </vehicleType>
-<!--    <vehicle id="RE1-HIN" type="car"/>-->
-<!--    <vehicle id="RE1-Rück" type="car"/>-->
-<!--    <vehicle id="RE1-HIN" type="car"/>-->
+<!--    <vehicle id="RE1-HIN-1" type="car"/>-->
+<!--    <vehicle id="RE1-Ruck" type="car"/>-->
+<!--    <vehicle id="RE1-RUCK-1" type="car"/>-->
 <!--    <vehicle id="RE1-HIN" type="car"/>-->
 </vehicleDefinitions>

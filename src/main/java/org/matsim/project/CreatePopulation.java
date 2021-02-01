@@ -217,282 +217,282 @@ public class CreatePopulation {
                 person.addPlan(plan);
             }
         }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-11am";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 39600;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-11am";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 39600;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-12am";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 43200;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                plan.addLeg(populationFactory.createLeg("pt"));
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-12am";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
+//
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 43200;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
+//
+//                plan.addLeg(populationFactory.createLeg("pt"));
+//
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
+//
+//                person.addPlan(plan);
+//            }
+//        }
 
 
 //        Rückfahrten
 
 
 
-
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-1pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 46800;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-1pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-2pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 50400;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 46800;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                plan.addLeg(populationFactory.createLeg("pt"));
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-3pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 54000;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-2pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-4pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 57600;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 50400;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                plan.addLeg(populationFactory.createLeg("pt"));
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-5pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 61200;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                person.addPlan(plan);
+//            }
+//        }
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-6pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 64800;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-3pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 54000;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
-        for (ODTrips oneODpair: listtrips) {
-            for (int i = 0; i < oneODpair.noOfTrips; i++) {
-//                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
-                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-7pm";
-                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
-                population.addPerson(person);
-                Plan plan = populationFactory.createPlan();
-
-                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
-                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 68400;
-//                            14400 * Math.random() + 21600;
-                activity1.setEndTime(workstart);
-                plan.addActivity(activity1);
-
-                plan.addLeg(populationFactory.createLeg("pt"));
-
-                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
-                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
-                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
-                plan.addActivity(activity2);
+//                plan.addLeg(populationFactory.createLeg("pt"));
 //
-                plan.addLeg(populationFactory.createLeg("pt"));
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
 //
-                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
-                plan.addActivity(activity3);
-
-                person.addPlan(plan);
-            }
-        }
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-4pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
+//
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 57600;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
+//
+//                plan.addLeg(populationFactory.createLeg("pt"));
+//
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
+//
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-5pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
+//
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 61200;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
+//
+//                plan.addLeg(populationFactory.createLeg("pt"));
+//
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
+//
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-6pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
+//
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 64800;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
+//
+//                plan.addLeg(populationFactory.createLeg("pt"));
+//
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
+//
+//                person.addPlan(plan);
+//            }
+//        }
+//        for (ODTrips oneODpair: listtrips) {
+//            for (int i = 0; i < oneODpair.noOfTrips; i++) {
+////                final String idTag = oneODpair.originID + "-" + oneODpair.destinationID + "-" + i + "-1pm";
+//                final String idTag = oneODpair.destinationID + "-" + oneODpair.originID + "-" + i + "-7pm";
+//                Person person = populationFactory.createPerson(Id.create(idTag, Person.class));
+//                population.addPerson(person);
+//                Plan plan = populationFactory.createPlan();
+//
+//                Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.destinationID)).getCoord();
+//                Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
+//                double workstart = 68400;
+////                            14400 * Math.random() + 21600;
+//                activity1.setEndTime(workstart);
+//                plan.addActivity(activity1);
+//
+//                plan.addLeg(populationFactory.createLeg("pt"));
+//
+//                Coord destinationCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
+//                Activity activity2 = populationFactory.createActivityFromCoord("work", (destinationCoord));
+//                activity2.setEndTime(workstart + 28800);//4pm, need to be somehow randomized as well
+//                plan.addActivity(activity2);
+////
+//                plan.addLeg(populationFactory.createLeg("pt"));
+////
+//                Activity activity3 = populationFactory.createActivityFromCoord("home", (homeCoord));
+//                plan.addActivity(activity3);
+//
+//                person.addPlan(plan);
+//            }
+//        }
 //        MatsimWriter popWriter = new PopulationWriter(population);
 //        popWriter.write("./scenarios/Erding/Input/population-03-12-2020-3starttimes.xml");
 
