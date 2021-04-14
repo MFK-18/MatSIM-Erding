@@ -34,7 +34,7 @@ public class CreatePopulation {
 
 //liest die Daten vom LinTim Input ein und wandelt die Formate für Matsim sinnvoll um
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\Input\\LinTim\\OD.giv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("./scenarios/Erding/Input/LinTim/OD.giv"))) {
 
             for (int i = 0; i < 1; i++) {
                 reader.readLine();
@@ -79,8 +79,8 @@ public class CreatePopulation {
 
                 Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
                 Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 21600;
-//                            14400 * Math.random() + 21600;
+                double workstart = //21600; //6uhr
+                            3600 * Math.random() + 21600;
                 activity1.setEndTime(workstart);
                 plan.addActivity(activity1);
 
@@ -108,8 +108,8 @@ public class CreatePopulation {
 
                     Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
                     Activity activity1 = populationFactory.createActivityFromCoord("home",homeCoord);
-                    double workstart = 25200;
-//                            14400 * Math.random() + 21600;
+                    double workstart = //25200; //7uhr
+                            3600 * Math.random() + 25200;
                     activity1.setEndTime(workstart);
                     plan.addActivity(activity1);
 
@@ -137,8 +137,8 @@ public class CreatePopulation {
 
                 Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
                 Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 28800;
-//                            14400 * Math.random() + 21600;
+                double workstart = //28800; //8 Uhr
+                            3600 * Math.random() + 28800;
                 activity1.setEndTime(workstart);
                 plan.addActivity(activity1);
 
@@ -167,8 +167,8 @@ public class CreatePopulation {
 
                 Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
                 Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 32400;
-//                            14400 * Math.random() + 21600;
+                double workstart = //32400; //9 Uhr
+                            3600 * Math.random() + 21600;
                 activity1.setEndTime(workstart);
                 plan.addActivity(activity1);
 
@@ -197,8 +197,8 @@ public class CreatePopulation {
 
                 Coord homeCoord = networkNodes.get(Id.createNodeId(oneODpair.originID)).getCoord();
                 Activity activity1 = populationFactory.createActivityFromCoord("home", homeCoord);
-                double workstart = 36000;
-//                            14400 * Math.random() + 21600;
+                double workstart = //36000; // 10uhr
+                            3600 * Math.random() + 36000;
                 activity1.setEndTime(workstart);
                 plan.addActivity(activity1);
 

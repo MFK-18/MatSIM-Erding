@@ -20,6 +20,8 @@ package org.matsim.project;
 
 
 import ch.sbb.matsim.routing.pt.raptor.SwissRailRaptorModule;
+import org.apache.log4j.Logger;
+import org.matsim.analysis.detailedPersonTripAnalysis.RunPersonTripAnalysis;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.contrib.minibus.PConfigGroup;
 import org.matsim.contrib.minibus.hook.PModule;
@@ -28,7 +30,9 @@ import org.matsim.core.config.ConfigUtils;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.core.utils.geometry.transformations.TransformationFactory;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -38,8 +42,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class RunMatsim{
 
-//	private final static Logger log = Logger.getLogger(RunMinibus.class);
-
+private static final Logger log = Logger.getLogger(RunMatsim.class );
 	public static void main(String[] args) {
 
 //		Config config = ConfigUtils.loadConfig( args[0], new PConfigGroup() ) ;
@@ -66,10 +69,14 @@ public class RunMatsim{
 //		CreatePopulation createPopulation = new CreatePopulation(population, network);
 //		createPopulation.populate();
 		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter df;
-		df = DateTimeFormatter.ISO_LOCAL_DATE;
+
+		DateTimeFormatter df = DateTimeFormatter.ISO_LOCAL_DATE;
 		// possibly modify config here
-		config.controler().setOutputDirectory("./Erding/output/" + now.format(df) + "-250iter(10perc)");
+		int iter = 500;//setzt die Anzahl der Iterations fest
+		config.controler().setLastIteration(iter);
+		config.controler().setWriteEventsInterval(iter);
+		config.controler().setWritePlansInterval(iter);
+		config.controler().setOutputDirectory("./Erding/output/" + now.format(df) + "-" + iter + "iter(10perc-0.8-0.08ea)");
 //		config.plans().isRemovingUnneccessaryPlanAttributes();
 		config.controler().setOverwriteFileSetting(OutputDirectoryHierarchy.OverwriteFileSetting.deleteDirectoryIfExists);
 
@@ -88,5 +95,40 @@ public class RunMatsim{
 		// ---
 		
 		controler.run();
+//		runAnalysis(controler);
 	}
+
+
+//	public static void runAnalysis(Controler controler) {
+//		Config config = controler.getConfig();
+//
+//		String modesString = "";
+//		for (String mode: config.planCalcScore().getAllModes()) {
+//			modesString = modesString + mode + ",";
+//		}
+//		// remove last ","
+//		if (modesString.length() < 2) {
+//			log.error("no valid mode found");
+//			modesString = null;
+//		} else {
+//			modesString = modesString.substring(0, modesString.length() - 1);
+//		}
+//
+//		String[] args = new String[] {
+//				config.controler().getOutputDirectory(),
+//				config.controler().getRunId(),
+//				"null", // TODO: reference run, hard to automate
+//				"null", // TODO: reference run, hard to automate
+//				config.global().getCoordinateSystem(),
+//				"https://svn.vsp.tu-berlin.de/repos/public-svn/matsim/scenarios/countries/de/berlin/projects/avoev/shp-files/shp-bezirke/bezirke_berlin.shp",
+//				TransformationFactory.DHDN_GK4,
+//				"SCHLUESSEL",
+//				"home",
+//				"1", // TODO: scaling factor, should be 10 for 10pct scenario and 100 for 1pct scenario
+//				"null", // visualizationScriptInputDirectory
+//				modesString
+//		};
+//
+//		RunPersonTripAnalysis.main(args);
+//	}
 }

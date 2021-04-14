@@ -50,7 +50,8 @@ import java.util.*;
     protected void buildNetwork() {
         Map <Integer,Node> nodes = new HashMap<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\LinTimCSV\\Nodes.CSV"))) {
+//        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\LinTimCSV\\Nodes.CSV"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("./scenarios/Erding/LinTimCSV/Nodes.CSV"))) {
             for (int i = 0; i < 5; i++) {
                 reader.readLine();
             }
@@ -90,8 +91,10 @@ import java.util.*;
 
 
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Mike\\git\\matsim-example-project\\scenarios\\Erding\\LinTimCSV\\Link-Orchi.CSV"))) {
-            for (int i = 0; i < 5; i++) {
+//        try (BufferedReader reader = new BufferedReader(new FileReader("./scenarios/Erding/LinTimCSV/Link-Orchi.CSV"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("./scenarios/Erding/LinTimCSV/Link.CSV"))) {
+
+                for (int i = 0; i < 5; i++) {
                 reader.readLine();
             }
             String line;

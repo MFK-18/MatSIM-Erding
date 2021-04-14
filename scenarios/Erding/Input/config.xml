@@ -16,29 +16,40 @@
         <!-- Überprüfen wie die Werte in LinTim angegeben, und wie sie Sinn machen in Matsim-->
         <param name="delayPerAlightingPassenger" value="1.0"/>
         <param name="doorOperationMode" value="parallel"/>
-<!--        fix-->
+<!--        100% wie im Lintim Modell-->
 <!--        <param name="costPerVehicleAndDay" value="1200.00"/>-->
 <!--        <param name="costPerKilometer" value="1.50"/>-->
 <!--        <param name="costPerHour" value="50.00"/>-->
+<!--        50%-->
+<!--        <param name="costPerVehicleAndDay" value="600.00"/>-->
+<!--        <param name="costPerKilometer" value="0.750"/>-->
+<!--        <param name="costPerHour" value="25.00"/>-->
+<!--        25%-->
+<!--                <param name="costPerVehicleAndDay" value="300.00"/>-->
+<!--                <param name="costPerKilometer" value="0.375"/>-->
+<!--                <param name="costPerHour" value="12.50"/>-->
+<!--        10%-->
         <param name="costPerVehicleAndDay" value="120.00"/>
-        <param name="costPerKilometer" value="0.150"/>
+        <param name="costPerKilometer" value="0.15"/>
         <param name="costPerHour" value="5.00"/>
-
-<!--        <param name="costPerVehicleAndDay" value="100.00"/>-->
-<!--        <param name="costPerKilometer" value="0.30"/>-->
-<!--        <param name="costPerHour" value="10.00"/>-->
 <!--        Werte von earnings anpassen an kosten
 cas -->
-        <param name="earningsPerBoardingPassenger" value="5.0"/>
-        <param name="earningsPerKilometerAndPassenger" value="0.0"/>
+        <param name="earningsPerBoardingPassenger" value="0.8"/>
+<!--        Risiko, dass jedes mal neuegezhalt wird bei Umstieg - Überprüfen
+            Umschichten -->
+        <param name="earningsPerKilometerAndPassenger" value="0.08"/>
         <param name="pricePerVehicleBought" value="500.0"/>
         <param name="pricePerVehicleSold" value="500.0"/>
         <param name="startWith24Hours" value="false"/>
         <param name="minOperationTime" value="0.0"/>
         <!--        Koord vom Netzwerk an min/max anpassen in Via grob wahrnehmen!!-->
-        <param name="minX" value="4467800.0"/>
+<!--        <param name="minX" value="4467800.0"/>-->
+<!--        <param name="maxX" value="4525400.0"/>-->
+        <param name="minX" value="4474397.0"/>
         <param name="maxX" value="4525400.0"/>
-        <param name="minY" value="5331550.0"/>
+<!--        <param name="minY" value="5331550.0"/>-->
+<!--        <param name="maxY" value="5369800.0"/>-->
+        <param name="minY" value="5339096.0"/>
         <param name="maxY" value="5369800.0"/>
         <param name="useFranchise" value="true"/>
         <param name="writeStatsInterval" value="1"/>
@@ -51,7 +62,7 @@ cas -->
         <param name="timeSlotSize" value="900.0"/>
         <param name="useAdaptiveNumberOfOperators" value="true"/>
         <param name="shareOfOperatorsWithProfit" value="0.90"/>
-        <param name="disableCreationOfNewOperatorsInIteration" value="75"/>
+        <param name="disableCreationOfNewOperatorsInIteration" value="200"/>
         <param name="reRouteAgentsStuck" value="false"/>
         <!-- <param name="Module_1" value="MaxRandomStartTimeAllocator" />
                 <param name="ModuleProbability_1" value="0.10" />
@@ -92,11 +103,11 @@ cas -->
         <param name="enableLinkToLinkRouting" value="false"/>
         <param name="runId" value="Erding-Matsim" />
         <param name="firstIteration" value="0"/>
-        <param name="lastIteration" value="250"/>
+<!--        <param name="lastIteration" value="600"/>-->
 <!--        <param name="outputDirectory" value="./scenarios/Erding/output/21-11-2020-5iter/"/>-->
         <param name="eventsFileFormat" value="xml"/>
-        <param name="writeEventsInterval" value="250" />
-        <param name="writePlansInterval" value="250" />
+<!--        <param name="writeEventsInterval" value="600" />-->
+<!--        <param name="writePlansInterval" value="600" />-->
         <param name="routingAlgorithmType" value="AStarLandmarks"/>
     </module>
 
@@ -111,11 +122,13 @@ cas -->
     <module name="global">
         <param name="coordinateSystem" value="EPSG:31468"/>
         <param name="randomSeed" value="1234"/>
-        <param name="numberOfThreads" value="2"/>
+        <param name="numberOfThreads" value="8"/>
     </module>
     <module name="network">
-        <param name="inputNetworkFile" value="NetworkErding-25-01-2021(Orchi).xml"/>
+        <param name="inputNetworkFile" value="NetworkErding-25-01-2021-Orchi.xml"/>
 <!--        <param name="inputNetworkFile" value="NetworkErding-04-12-2020.xml"/>-->
+<!--        <param name="inputNetworkFile" value="NetworkErding-16-02-2021(Test).xml"/>-->
+
     </module>
 
 
@@ -187,7 +200,7 @@ cas -->
     <module name="plans">
 <!--        <param name="inputPlansFile" value="population-21-12-2020-6-12am&#45;&#45;1-7pm.xml"/>-->
 <!--        <param name="inputPlansFile" value="population.xml"/>-->
-        <param name="inputPlansFile" value="population-19-01-2021-6-10am.xml"/>
+        <param name="inputPlansFile" value="population-2021-03-24-6-10-rand.xml"/>
     </module>
     <!--  ======================================================================  -->
         <module name="qsim" >
@@ -248,13 +261,5 @@ cas -->
         <param name="modes" value="car,pt"/>
     </module>
 
-<!--    <module name="planscalcroute" >-->
-<!--        <param name="networkModes" value="car" />-->
-<!--        <parameterset type="teleportedModeParameters" >-->
-<!--            <param name="beelineDistanceFactor" value="1.3" />-->
-<!--            <param name="mode" value="walk" />-->
-<!--            <param name="teleportedModeSpeed" value="1.0555556" />-->
-<!--        </parameterset>-->
-<!--    </module>-->
 
 </config>

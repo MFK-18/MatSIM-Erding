@@ -5,18 +5,28 @@
     <vehicleType id="car">
         <description>Small Train</description>
         <capacity>
-            <seats persons="100"/>
-            <standingRoom persons="50"/>
+            <seats persons="300"/>
+            <standingRoom persons="500"/>
         </capacity>
-        <length meter="50"/>
+<!--        <length meter="50"/>-->
 <!--        <width meter="2.55"/>-->
         <accessTime secondsPerPerson="1.0"/>
         <egressTime secondsPerPerson="1.0"/>
         <doorOperation mode="serial"/>
         <passengerCarEquivalents pce="1.0"/>
     </vehicleType>
-<!--    <vehicle id="RE1-HIN-1" type="car"/>-->
-<!--    <vehicle id="RE1-Ruck" type="car"/>-->
+    <vehicle id="RE1-HIN-1" type="car"/>
+    <vehicle id="RE1-HIN" type="car"/>
+    <vehicle id="S6-1" type="car"/>
+    <vehicle id="S6-2" type="car"/>
+    <vehicle id="S6-3" type="car"/>
+    <vehicle id="S6-4" type="car"/>
+    <vehicle id="S6-5" type="car"/>
+    <vehicle id="S8-1" type="car"/>
+    <vehicle id="S8-2" type="car"/>
+    <vehicle id="S8-3" type="car"/>
+    <vehicle id="S8-4" type="car"/>
+<!--    <vehicle id="S8-5" type="car"/>-->
 <!--    <vehicle id="RE1-RUCK-1" type="car"/>-->
-<!--    <vehicle id="RE1-HIN" type="car"/>-->
+
 </vehicleDefinitions>
