@@ -41,7 +41,7 @@ public class NetworkExamplePrintout {
 //        NetworkCleaner networkcleaner = new NetworkCleaner();
 //        networkcleaner.run("./scenarios/Erding/Input/NetworkErding-23-01-2021(Orchi-mit-1speed).xml","./scenarios/Erding/Input/NetworkErding-23-01-2021(Orchi-mit-1speed)(cleaned).xml");
 
-        new NetworkWriter(example.network).write("./scenarios/Erding/Input/NetworkErding-25-01-2021-Orchi.xml");
+//        new NetworkWriter(example.network).write("./scenarios/Erding/Input/NetworkErding-25-01-2021-Orchi.xml");
 //        new NetworkWriter(example.network).write("./scenarios/Erding/Input/NetworkErding-16-02-2021(Test).xml");
 
     }

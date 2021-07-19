@@ -1,0 +1,10 @@
+pattern	0+	5+	10+	15+	20+	25+	30+	35+	40+	45+	50+	55+	60+
+home---pt interaction	25854	0	0	0	0	267	0	0	0	0	0	0	2577
+home---work	0	0	0	0	0	0	0	0	0	0	0	0	1480
+pt interaction---home	24906	0	0	0	0	252	0	0	0	0	0	0	2448
+pt interaction---pt interaction	1788	2813	5879	4736	4095	3169	3774	4107	4638	8251	6651	3619	12393
+pt interaction---work	25981	0	0	0	0	281	0	0	0	0	0	0	2428
+work---home	0	0	0	0	0	0	0	0	0	0	0	0	2034
+work---pt interaction	25653	0	0	0	0	280	0	0	0	0	0	0	2082
+
+average trip duration: 1805.6433982328049 seconds = 00:30:05
