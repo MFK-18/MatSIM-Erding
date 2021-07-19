@@ -1,0 +1,22 @@
+2021-06-22T13:09:44,104  WARN CreatePStops:136 file  not found. Falling back to min/max serviceArea parameters.
+2021-06-22T13:09:44,390  WARN PrepareForSimImpl:222 'usePersonIdForMissingVehicleId' is deprecated. It will be removed soon.
+2021-06-22T13:09:44,875  WARN RandomizingTimeDistanceTravelDisutilityFactory:112 There will be no routing randomness. The randomization of the travel disutility requires the monetary distance rate to be different than zero. Continuing anyway.
+2021-06-22T13:09:44,890  WARN PreProcessEuclidean:59 There are links with stored length smaller than their Euclidean distance in this network. Thus, A* cannot guarantee to calculate the least-cost paths between two nodes.
+2021-06-22T13:09:44,921  WARN PreProcessEuclidean:59 There are links with stored length smaller than their Euclidean distance in this network. Thus, A* cannot guarantee to calculate the least-cost paths between two nodes.
+2021-06-22T13:09:46,173  WARN ObjectAttributesConverter:77 No AttributeConverter found for class java.util.Collections$UnmodifiableMap. Not all attribute values can be converted.
+2021-06-22T13:09:51,458  WARN QueueWithBuffer:390 Link 0 too small: enlarge storage capacity from: 195.33333333333334 Vehicles to: 1611.6611661166116 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,462  WARN QueueWithBuffer:390 Link 1 too small: enlarge storage capacity from: 195.33333333333334 Vehicles to: 1611.6611661166116 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,462  WARN QueueWithBuffer:390 Link 10 too small: enlarge storage capacity from: 745.4666666666667 Vehicles to: 11563.257105714118 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 100 too small: enlarge storage capacity from: 942.1333333333333 Vehicles to: 14894.60370994941 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 101 too small: enlarge storage capacity from: 942.1333333333333 Vehicles to: 14894.60370994941 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 102 too small: enlarge storage capacity from: 324.53333333333336 Vehicles to: 4899.3558776167465 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 103 too small: enlarge storage capacity from: 324.53333333333336 Vehicles to: 4899.3558776167465 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 104 too small: enlarge storage capacity from: 631.3333333333334 Vehicles to: 9895.506792058517 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 105 too small: enlarge storage capacity from: 631.3333333333334 Vehicles to: 9895.506792058517 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 106 too small: enlarge storage capacity from: 560.4 Vehicles to: 4941.217963790266 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,463  WARN QueueWithBuffer:390 Link 107 too small: enlarge storage capacity from: 560.4 Vehicles to: 4941.217963790266 Vehicles.  This is not fatal, but modifies the traffic flow dynamics.
+2021-06-22T13:09:51,464  WARN QueueWithBuffer:393 Additional warnings of this type are suppressed.
+2021-06-22T13:10:23,521  WARN ExpBetaPlanChanger:86 Would make sense to revise this once more.  See comments in code.  kai, nov08
+2021-06-22T13:10:23,841  WARN ObjectAttributesConverter:77 No AttributeConverter found for class java.util.Collections$UnmodifiableMap. Not all attribute values can be converted.
+2021-06-22T20:21:06,613  WARN ObjectAttributesConverter:77 No AttributeConverter found for class java.util.Collections$UnmodifiableMap. Not all attribute values can be converted.
+2021-06-22T20:21:44,285  WARN ObjectAttributesConverter:77 No AttributeConverter found for class java.util.Collections$UnmodifiableMap. Not all attribute values can be converted.

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v2.dtd">
+<config>
+	<module name="controler" >
+		<param name="outputDirectory" value="./Erding/output/2021-06-21-1000iter(10perc-1-0.1ea-randseed2707)" />
+		<!-- Possible values: failIfDirectoryExists, overwriteExistingFiles, deleteDirectoryIfExists -->
+		<param name="overwriteFiles" value="deleteDirectoryIfExists" />
+		<!-- An identifier for the current run which is used as prefix for output files and mentioned in output xml files etc. -->
+		<param name="runId" value="Erding-Matsim" />
+		<!-- iterationNumber % writeEventsInterval == 0 defines in which iterations events are written to a file. `0' disables events writing completely. -->
+		<param name="writeEventsInterval" value="1000" />
+		<!-- iterationNumber % writePlansInterval == 0 defines (hopefully) in which iterations plans are written to a file. `0' disables plans writing completely.  Some plans in early iterations are always written -->
+		<param name="writePlansInterval" value="1000" />
+	</module>
+	<module name="global" >
+		<param name="coordinateSystem" value="EPSG:31468" />
+		<!-- "global" number of threads.  This number is used, e.g., for replanning, but NOT in the mobsim.  This can typically be set to as many cores as you have available, or possibly even slightly more. -->
+		<param name="numberOfThreads" value="8" />
+		<param name="randomSeed" value="2707" />
+	</module>
+	<module name="network" >
+		<param name="inputNetworkFile" value="NetworkErding-25-01-2021-Orchi.xml" />
+	</module>
+	<module name="p" >
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_1" value="300" />
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_2" value="300" />
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_3" value="300" />
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_4" value="300" />
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_5" value="300" />
+		<!-- removes the strategy from the choice set at the beginning of the given iteration -->
+		<param name="ModuleDisableInIteration_6" value="300" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_1" value="" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_2" value="" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_3" value="1.0,900,true,true" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_4" value="1500.0,0.2" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_5" value="1500.0,0.2,true" />
+		<!-- parameters of the strategy -->
+		<param name="ModuleParameter_6" value="1.0,true" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_1" value="0.1" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_2" value="0.1" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_3" value="0.3" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_4" value="0.1" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_5" value="0.1" />
+		<!-- probability that a strategy is applied to a given a plan. despite its name, this really is a ``weight'' -->
+		<param name="ModuleProbability_6" value="0.3" />
+		<!-- name of strategy -->
+		<param name="Module_1" value="WeightedStartTimeExtension" />
+		<!-- name of strategy -->
+		<param name="Module_2" value="WeightedEndTimeExtension" />
+		<!-- name of strategy -->
+		<param name="Module_3" value="ReduceTimeServedRFare" />
+		<!-- name of strategy -->
+		<param name="Module_4" value="EndRouteExtension" />
+		<!-- name of strategy -->
+		<param name="Module_5" value="SidewaysRouteExtension" />
+		<!-- name of strategy -->
+		<param name="Module_6" value="ReduceStopsToBeServedRFare" />
+		<!-- the mode of transport in which the paratransit operates -->
+		<param name="OperationMode" value="pt" />
+		<!-- comma separated integer-values, as used in NetworkCalcTopoTypes -->
+		<param name="TopoTypesForStops" value="null" />
+		<!-- cost per vehicle and hour in service -->
+		<param name="costPerHour" value="5.0" />
+		<!-- cost per vehicle and kilometer travelled -->
+		<param name="costPerKilometer" value="0.15" />
+		<!-- cost per vehicle and day - will prevent companies from operating only short periods of a day -->
+		<param name="costPerVehicleAndDay" value="120.0" />
+		<!-- The amount of time a vehicle is delayed by one single alighting passenger in seconds. -->
+		<param name="delayPerAlightingPassenger" value="1.0" />
+		<!-- The amount of time a vehicle is delayed by one single boarding passenger in seconds. -->
+		<param name="delayPerBoardingPassenger" value="2.0" />
+		<!-- No more new operators will be found beginning with the iteration specified -->
+		<param name="disableCreationOfNewOperatorsInIteration" value="200" />
+		<!-- serial and parallel are permitted. Default is serial. -->
+		<param name="doorOperationMode" value="parallel" />
+		<!-- The rest time of a driver at the end of a complete tour in seconds. Defaults to 60 seconds. -->
+		<param name="driverRestTime" value="60.0" />
+		<!-- Price an agent has to pay when boarding, regardless how far he will travel -->
+		<param name="earningsPerBoardingPassenger" value="1.0" />
+		<!-- earnings per passenger kilometer -->
+		<param name="earningsPerKilometerAndPassenger" value="0.1" />
+		<!-- The grid size (length and height) for aggregating stuff in various modules (RandomStopProvider, ActivityLocationsParatransitUser, PFranchise). Default of Double.maxvalue effectively aggregates all data points into one gridPoint -->
+		<param name="gridSize" value="500.0" />
+		<!-- The budget a new operator is initialized with -->
+		<param name="initialBudget" value="2001.0" />
+		<!-- will log operators individually if set to true -->
+		<param name="logOperators" value="true" />
+		<!-- will log total score before and after adding route design score. Values: no and onlyNonZeroRouteDesignScore -->
+		<param name="logRouteDesignVsTotalScore" value="no" />
+		<!-- max x coordinate for service area -->
+		<param name="maxX" value="4525400.0" />
+		<!-- max y coordinate for service area -->
+		<param name="maxY" value="5369800.0" />
+		<!-- Merges all routes of a transit line that have the same sequence of stops. Does not respect the time profile of the routes. Default is false. -->
+		<param name="mergeTransitLine" value="false" />
+		<!-- Link cannot serve as paratransit stop, if its capacity is lower than the limit set here. Default is 0. -->
+		<param name="minCapacityForStops" value="0.0" />
+		<!-- min distance the two initial stops of a new operator's first route should be apart. Default is 1.0. Set to 0.0 to allow for the same stop being picked as start and end stop. -->
+		<param name="minInitialStopDistance" value="1.0" />
+		<!-- min time of operation of each operator in seconds -->
+		<param name="minOperationTime" value="0.0" />
+		<!-- min x coordinate for service area -->
+		<param name="minX" value="4474397.0" />
+		<!-- min y coordinate for service area -->
+		<param name="minY" value="5339096.0" />
+		<!-- number of iterations an operator will survive with a negative scoring -->
+		<param name="numberOfIterationsForProspecting" value="10" />
+		<!-- number of operators operating -->
+		<param name="numberOfOperators" value="5" />
+		<!-- Type of operator to be used -->
+		<param name="operatorType" value="CarefulMultiPlanOperator" />
+		<!-- This String will be used to identify all components of the paratransit system, e.g. vehicles and drivers -->
+		<param name="pIdentifier" value="para_" />
+		<!-- Passenger car equilvalents of one paratransit vehicle -->
+		<param name="passengerCarEquivalents" value="1.0" />
+		<!-- Agents will board every vehicles serving the destination (stop), if set to true. Set to false, to force agents to take only vehicles of the line planned. Default is false. -->
+		<param name="passengersBoardEveryLine" value="false" />
+		<!-- number of passengers per vehicle -->
+		<param name="paxPerVehicle" value="7" />
+		<!-- Freespeed of link will be modified by factor. Resulting link travel time is written to transit schedule. Default is 1.0 aka freespeed of the link. -->
+		<param name="planningSpeedFactor" value="1.0" />
+		<!-- price of one vehicle bought -->
+		<param name="pricePerVehicleBought" value="500.0" />
+		<!-- price of one vehicle sold -->
+		<param name="pricePerVehicleSold" value="500.0" />
+		<!-- All agents stuck will be rerouted at the beginning of an iteration, if set to true. -->
+		<param name="reRouteAgentsStuck" value="false" />
+		<!-- The route provider used. Currently, there are SimpleCircleScheduleProvider and SimpleBackAndForthScheduleProvider -->
+		<param name="routeProvider" value="TimeAwareComplexCircleScheduleProvider" />
+		<!-- a shapefile containing a shape of the service-area or a textfile containing a sequence of x/y values, describing a line string -->
+		<param name="serviceAreaFile" value="" />
+		<!-- Target share of profitable operators - Set useAdaptiveNumberOfOperators=true to enable this feature -->
+		<param name="shareOfOperatorsWithProfit" value="0.9" />
+		<!-- Link cannot serve as paratransit stop, if its speed limit is equal or higher than the limit set here. Default is +INF -->
+		<param name="speedLimitForStops" value="1.01" />
+		<!-- Initial plan will start operating 0-24 hours -->
+		<param name="startWith24Hours" value="false" />
+		<!-- The paratransit stop locator, either one stop per car link (allCarLinks) or on approaches to junction areas and some stops between junction areas (junctionApproachesAndBetweenJunctions). Default is allCarLinks. -->
+		<param name="stopLocationSelector" value="allCarLinks" />
+		<!-- Parameters for the paratransit stop locator. For allCarLinks there are no parameters to set. For junctionApproachesAndBetweenJunctions, which is based on the IntersectionSimplifier, there is pmin (maximum distance betwen 2 nodes to be merged into the same cluster, should be smaller than the maximum transfer distance), epsilon (minimum number of nodes to consider it a cluster) and rough distance between stops (used in NetworkSimplifier). Default is "" for allCarLinks and "50.0,2,500" for junctionApproachesAndBetweenJunctions. -->
+		<param name="stopLocationSelectorParameter" value="" />
+		<!-- Optional: add a subsidy to the operators' scores. Currently implemented: 'null': no subsidy; 'perPassenger': a subsidy of 100000 monetary units per passenger -->
+		<param name="subsidyApproach" value="null" />
+		<!-- The size of a time slot aggregating stuff in various modules (TimeProvider, CreateNewPlan). Default of Double.maxvalue effectively aggregates all data points into one time slot -->
+		<param name="timeSlotSize" value="900.0" />
+		<!-- Will initialize one operator for each transit line with the given time of operation and number of vehicles -->
+		<param name="transitScheduleToStartWith" value="null" />
+		<!-- Will try to adapt the number of operators to meet the given share of profitable operators if set to true -->
+		<param name="useAdaptiveNumberOfOperators" value="true" />
+		<!-- Will use a franchise system if set to true -->
+		<param name="useFranchise" value="true" />
+		<!-- Maximum velocity of minibuses. Default is Double.POSITIVE_INFINITY. -->
+		<param name="vehicleMaximumVelocity" value="150.0" />
+		<!-- number of iterations the gexf output gets updated. Set to zero to turn this feature off -->
+		<param name="writeGexfStatsInterval" value="20" />
+		<!-- will calculate common performance metrics if set to true, default is false -->
+		<param name="writeMetrics" value="false" />
+		<!-- interval in which statistics will be plotted. Set to zero to turn this feature off. Set to something larger than the total number of iterations to turn off the plots, but write the statistics file anyway -->
+		<param name="writeStatsInterval" value="1" />
+	</module>
+	<module name="planCalcScore" >
+		<!-- logit model scale parameter. default: 1.  Has name and default value for historical reasons (see Bryan Raney's phd thesis). -->
+		<param name="BrainExpBeta" value="2.0" />
+		<parameterset type="scoringParameters" >
+			<param name="utilityOfLineSwitch" value="-0.3" />
+			<param name="waitingPt" value="-1.0" />
+			<parameterset type="activityParams" >
+				<param name="activityType" value="dummy" />
+				<!-- typical duration of activity.  needs to be defined and non-zero.  in sec. -->
+				<param name="typicalDuration" value="02:00:00" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="car interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="pt interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="bike interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="drt interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="taxi interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="other interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="walk interaction" />
+				<param name="typicalDuration" value="undefined" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="home" />
+				<param name="minimalDuration" value="08:00:00" />
+				<param name="typicalDuration" value="12:00:00" />
+			</parameterset>
+			<parameterset type="activityParams" >
+				<param name="activityType" value="work" />
+				<param name="minimalDuration" value="08:00:00" />
+				<param name="typicalDuration" value="12:00:00" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<!-- [utils/hr] additional marginal utility of traveling.  normally negative.  this comes on top of the opportunity cost of time -->
+				<param name="marginalUtilityOfTraveling_util_hr" value="-4.0" />
+				<param name="mode" value="car" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<param name="marginalUtilityOfTraveling_util_hr" value="-1.0" />
+				<param name="mode" value="pt" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<param name="marginalUtilityOfTraveling_util_hr" value="-1.25" />
+				<param name="mode" value="walk" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<param name="mode" value="bike" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<param name="mode" value="ride" />
+			</parameterset>
+			<parameterset type="modeParams" >
+				<param name="mode" value="other" />
+			</parameterset>
+		</parameterset>
+	</module>
+	<module name="plans" >
+		<param name="inputPlansFile" value="population-2021-03-24-6-10-rand.xml" />
+	</module>
+	<module name="planscalcroute" >
+		<parameterset type="teleportedModeParameters" >
+			<param name="mode" value="bike" />
+		</parameterset>
+		<parameterset type="teleportedModeParameters" >
+			<param name="mode" value="walk" />
+		</parameterset>
+		<parameterset type="teleportedModeParameters" >
+			<param name="mode" value="non_network_walk" />
+		</parameterset>
+		<parameterset type="teleportedModeParameters" >
+			<param name="mode" value="ride" />
+		</parameterset>
+		<parameterset type="teleportedModeParameters" >
+			<param name="mode" value="pt" />
+		</parameterset>
+	</module>
+	<module name="qsim" >
+		<param name="endTime" value="30:00:00" />
+		<param name="startTime" value="00:00:00" />
+	</module>
+	<module name="strategy" >
+		<!-- maximum number of plans per agent.  ``0'' means ``infinity''.  Currently (2010), ``5'' is a good number -->
+		<param name="maxAgentPlanMemorySize" value="1" />
+		<parameterset type="strategysettings" >
+			<!-- strategyName of strategy.  Possible default names: SelectRandom BestScore KeepLastSelected ChangeExpBeta SelectExpBeta SelectPathSizeLogit      (selectors), ReRouteTimeAllocationMutatorTimeAllocationMutator_ReRouteChangeSingleTripModeChangeTripModeSubtourModeChoice (innovative strategies). -->
+			<param name="strategyName" value="ChangeExpBeta" />
+			<!-- weight of a strategy: for each agent, a strategy will be selected with a probability proportional to its weight -->
+			<param name="weight" value="0.7" />
+		</parameterset>
+		<parameterset type="strategysettings" >
+			<!-- iteration after which strategy will be disabled.  most useful for ``innovative'' strategies (new routes, new times, ...). Normally, better use fractionOfIterationsToDisableInnovation -->
+			<param name="disableAfterIteration" value="350" />
+			<param name="strategyName" value="org.matsim.contrib.minibus.performance.PReRoute" />
+			<param name="weight" value="0.3" />
+		</parameterset>
+	</module>
+	<module name="swissRailRaptor" >
+		<!-- Sets whether intermodal access and egress modes are selected by least cost (default) or randomly chosen out of the available access / egress modes. -->
+		<param name="intermodalAccessEgressModeSelection" value="CalcLeastCostModePerStop" />
+		<!-- Possible values: Default, Individual -->
+		<param name="scoringParameters" value="Default" />
+		<param name="transferPenaltyBaseCost" value="0.0" />
+		<param name="transferPenaltyCostPerTravelTimeHour" value="0.0" />
+		<param name="transferPenaltyMaxCost" value="Infinity" />
+		<param name="transferPenaltyMinCost" value="-Infinity" />
+		<param name="useIntermodalAccessEgress" value="false" />
+		<param name="useModeMappingForPassengers" value="false" />
+		<param name="useRangeQuery" value="false" />
+	</module>
+	<module name="transit" >
+		<!-- Input file containing the transit schedule to be simulated. -->
+		<param name="transitScheduleFile" value="transitScheduleBahn.xml" />
+		<!-- Set this parameter to true if transit should be simulated, false if not. -->
+		<param name="useTransit" value="true" />
+		<!-- Input file containing the vehicles used by the departures in the transit schedule. -->
+		<param name="vehiclesFile" value="transitvehicles.xml" />
+	</module>
+	<module name="transitRouter" >
+		<!-- additional time the router allocates when a line switch happens. Can be interpreted as a 'safety' time that agents need to safely transfer from one line to another -->
+		<param name="additionalTransferTime" value="180.0" />
+		<!-- maximum beeline distance between stops that agents could transfer to by walking -->
+		<param name="maxBeelineWalkConnectionDistance" value="1.0" />
+		<!-- the radius in which stop locations are searched, given a start or target coordinate -->
+		<param name="searchRadius" value="1.0" />
+	</module>
+
+</config>
